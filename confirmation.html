@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript" src="util.js"></script>
+    <title>Confirm</title>
+  </head>
+  <body>
+    <h1>Confirmation Page</h1>
+    <h3>Here is the line-up:</h3>
+    <ol class="lineup"></ol>
+    <div id="buttonDiv">
+      <button id="previous">Someone Else Showed Up.</button>
+      <button id="randomize">Randomize again.</button>
+      <button id="submit">Looks good!</button>
+    </div>
+  </body>
+  <script type="text/javascript">
+    var lineup = localStorage.present.split(',');
+    lineup.forEach(function (player) {
+      var item = $('<li class="playerSelectorList">');
+      item.text(player);
+      $('.lineup').append(item);
+    })
+  </script>
+</html>

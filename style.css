@@ -1,0 +1,96 @@
+* {
+  font-family: verdana;
+}
+
+ul.playerSelectorList {
+  padding: 0;
+  list-style: none;
+  font-size: 2em;
+  width: 80%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+ul.playerSelectorList > button {
+  height: auto;
+}
+
+ul.playerSelectorList > * {
+  font-size: 3em;
+}
+
+ul.playerSelectorList > li {
+  margin: 5px;
+  border: 1px solid black;
+  padding: 3%;
+}
+
+ul.playerSelectorList > li.present {
+  color: white;
+  background-color: red;
+}
+
+.submitPlayers {
+  width: 100%;
+  height: 40px;
+}
+
+#modalBackground {
+  position: absolute;
+  opacity: 0.5;
+  background-color: black;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#modalDiv > button{
+  font-size: 0.7em;
+}
+
+#modalDiv {
+  width: 50%;
+  height: 30%;
+  font-size: 4em;
+  position: absolute;
+  padding: 15%;
+  background-color: white;
+  text-align: center;
+  border-radius: 15px;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+h1 {
+  font-size: 5.5em;
+}
+
+h3 {
+  font-size: 4em;
+}
+
+ol > li {
+  font-size: 4em;
+}
+
+ol {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#buttonDiv > button {
+  font-size: 3em;
+  margin: 5%;
+}
+
+#buttonDiv {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

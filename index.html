@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Almost Classy</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript" src="util.js"></script>
+  </head>
+  <body>
+    <div id="main"></div>
+  </body>
+  <script type="text/javascript">
+  if(localStorage.currentGame){
+    var background = $('<div id="modalBackground">');
+    var modal = $('<div id="modalDiv">');
+    modal.text('You have an old game in storage.');
+    var continueLink = $('<button id="continue">Continue Current Game</button>');
+    var newLink = $('<button id="new">Start New Game</button>');
+
+    modal.append('<br>');
+    modal.append('<br>');
+    modal.append(continueLink);
+    modal.append('<br>');
+    modal.append('<br>');
+    modal.append(newLink);
+
+    $('body').append(background);
+    $('body').append(modal);
+
+    $('#new').click(function () {
+      $('#modalDiv').empty();
+      $('#modalDiv').text('Are you sure you want to clear the current game?');
+
+      modal.append('<br>');
+      modal.append('<br>');
+      $('#modalDiv').append($('<button id="yes">Yes</button>'));
+      modal.append('<br>');
+      modal.append('<br>');
+      $('#modalDiv').append($('<button id="no">No</button>'));
+
+      $('#yes').click(function () {
+        localStorage.clear();
+        location.reload();
+      })
+
+      $('#no').click(function () {
+        window.open('dashboard.html', '_self');
+      })
+    })
+
+    $('#continue').click(function () {
+      window.open('dashboard.html', '_self');
+    })
+  }
+  </script>
+  <script type="text/javascript" src="init.js"></script>
+</html>
