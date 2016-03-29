@@ -83,13 +83,34 @@ ol {
   transform: translateX(-50%);
 }
 
+#headerDiv{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid black;
+  background-color: white;
+  z-index: 99999;
+}
+
+#listDiv {
+  position: absolute;
+  top: 400px;
+  bottom: 340px;
+  left: 0;
+  right: 0;
+  overflow-y: scroll;
+}
+
 #buttonDiv > button {
   font-size: 3em;
   margin: 5%;
 }
 
 #buttonDiv {
-  position: absolute;
+  background-color: white;
+  border-top: 1px solid black;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
