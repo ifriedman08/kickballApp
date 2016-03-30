@@ -49,6 +49,7 @@ ul.playerSelectorList > li.present {
 
 #modalDiv > button{
   font-size: 0.7em;
+  padding: 10%;
 }
 
 #modalDiv {
