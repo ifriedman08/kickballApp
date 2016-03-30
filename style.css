@@ -38,7 +38,7 @@ ul.playerSelectorList > li.present {
 }
 
 #modalBackground {
-  position: absolute;
+  position: fixed;
   opacity: 0.5;
   background-color: black;
   top: 0;
@@ -56,7 +56,7 @@ ul.playerSelectorList > li.present {
   width: 50%;
   height: auto;
   font-size: 4em;
-  position: absolute;
+  position: fixed;
   padding: 15%;
   background-color: white;
   text-align: center;
