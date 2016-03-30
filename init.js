@@ -45,18 +45,20 @@ $('.playerSelectorList').append(addPlayerButton);
 var newPlayerHandler = function () {
   var name = prompt("Enter the new player's name:");
   // $(this).remove();
-  var bottomButton = $(".submitPlayers.bottom")
-  bottomButton.remove();
-  var listItem = $("<li class='playerItem present'>");
-  listItem.text(name);
-  $('.playerSelectorList').append(listItem);
-  $('.playerSelectorList').append($(this));
-  $('.playerSelectorList').append(bottomButton);
-  //setClickHandlers();
-  $(listItem).click(function () {
-    $(this).toggleClass('present');
-    $(this).toggleClass('absent');
-  })
+  var bottomButton = $(".submitPlayers.bottom");
+  if (name) {
+    bottomButton.remove();
+    var listItem = $("<li class='playerItem present'>");
+    listItem.text(name);
+    $('.playerSelectorList').append(listItem);
+    $('.playerSelectorList').append($(this));
+    $('.playerSelectorList').append(bottomButton);
+    //setClickHandlers();
+    $(listItem).click(function () {
+      $(this).toggleClass('present');
+      $(this).toggleClass('absent');
+    })
+  }
 }
 
 $("li.addPlayerItem").click(newPlayerHandler);
