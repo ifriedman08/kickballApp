@@ -179,6 +179,6 @@ div.add {
   display: inline-block;
   background-color: red;
   border-radius: 50%;
-  padding: 20%;
+  padding: 10%;
   transform: translateX(25%);
 }
