@@ -7,6 +7,58 @@
     <title>Dashboard</title>
   </head>
   <body>
-    <h2>dashboard</h2>
+    <h1 id="dashHeader">Dashboard</h1>
+    <div class="currentKicker"><h2>Kicking:<br></h2></div>
+    <div class="onDeck"><h3>On Deck:<br></h3></div>
+    <div class="inHole"><h4>On Deck's Deck:<br></h4></div>
+    <div class="arrowsDiv">
+      <div class="back">BACK</div>
+      <div class="add">+</div>
+      <div class="next">NEXT</div>
+    </div>
+    <script type="text/javascript">
+      playerString = localStorage.getItem('present');
+      playerArray = playerString.split(',');
+
+      currentKicker = playerArray[0];
+      onDeck = playerArray[1];
+      inHole = playerArray[2];
+
+      $('div.currentKicker > h2').append(currentKicker);
+      $('div.onDeck > h3').append(onDeck);
+      $('div.inHole > h4').append(inHole);
+
+      var moveForward = function () {
+        playerArray.push(playerArray.shift());
+        localStorage.setItem('present', playerArray);
+        location.reload();
+      };
+
+      var moveBack = function () {
+        playerArray = [playerArray.pop()].concat(playerArray);
+        localStorage.setItem('present', playerArray);
+        location.reload();
+      };
+
+      $("div.next").click(function () {
+        moveForward();
+      })
+
+      $("div.back").click(function () {
+        moveBack();
+      })
+
+      $("div.add").click(function () {
+        var newName = prompt("Who's the new arrival?");
+        var lastPlayer = localStorage.getItem('lastInLineup');
+        var left = playerArray.slice(0, playerArray.indexOf(lastPlayer) + 1);
+        var right = playerArray.slice(playerArray.indexOf(lastPlayer) + 1);
+        left.push(newName);
+        playerArray = left.concat(right);
+        localStorage.setItem('present', playerArray);
+        location.reload();
+      })
+
+    </script>
   </body>
 </html>

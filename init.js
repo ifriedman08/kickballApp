@@ -1,6 +1,7 @@
 almostClassy = {
   roster: [
     "Aaron M.",
+    "Talicia M.",
     "Ivan F.",
     "Nathalie L.S.",
     "Tyler J.",

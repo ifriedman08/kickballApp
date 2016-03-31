@@ -16,17 +16,56 @@
       <ol class="lineup"></ol>
     </div>
     <div id="buttonDiv">
-      <button id="previous">Someone Else Showed Up.</button>
+      <button id="addPlayer">Someone Else Showed Up.</button>
       <button id="randomize">Randomize again.</button>
       <button id="submit">Looks good!</button>
     </div>
   </body>
   <script type="text/javascript">
+
+    shuffle = function(array) {
+      var currentIndex = array.length, temporaryValue, randomIndex;
+      while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+      return array;
+    }
+
     var lineup = localStorage.present.split(',');
     lineup.forEach(function (player) {
-      var item = $('<li class="playerSelectorList">');
+      var item = $('<li class="linupItem">');
       item.text(player);
       $('.lineup').append(item);
+    })
+
+    $('#addPlayer').click(function () {
+      var name = prompt("Who's the new arrival?");
+      var item = $('<li class="linupItem">');
+      item.text(name);
+      $('.lineup').append(item);
+      playerString = localStorage.getItem('present');
+      playerArray = playerString.split(',');
+      playerArray.push(name);
+      localStorage.setItem('present', playerArray);
+    })
+
+    $('#randomize').click(function () {
+      playerString = localStorage.getItem('present');
+      playerArray = playerString.split(',');
+      playerArray = shuffle(playerArray);
+      localStorage.setItem('present', playerArray);
+      location.reload();
+    })
+
+    $("#submit").click(function () {
+      playerString = localStorage.getItem('present');
+      playerArray = playerString.split(',');
+      localStorage.setItem('lastInLineup', playerArray[playerArray.length - 1]);
+      window.open("dashboard.html", "_self")
     })
   </script>
 </html>

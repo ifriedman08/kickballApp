@@ -84,8 +84,7 @@ ol > li {
 
 ol {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 10%;
 }
 
 #buttonDiv > button {
@@ -106,7 +105,8 @@ ol {
   border-bottom: 1px solid black;
   background-color: white;
   z-index: 9999;
-  position: static;
+  position: absolute;
+  text-align: center;
   top: 0;
   left: 0;
   right: 0;
@@ -115,10 +115,69 @@ ol {
 
 #listDiv {
   position: absolute;
-  top: 25%;
+  top: 20%;
   bottom: 30%;
   left: 0;
   right: 0;
   font-size: 0.4em;
   overflow-y: scroll;
+}
+
+h1#dashHeader{
+  position: initial;
+  top:0;
+  left:0;
+  right: 0;
+  font-size: 3em;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
+div.currentKicker{
+  font-size: 1.5em;
+  text-align: center;
+  padding: 10px;
+}
+
+div.onDeck{
+  font-size: 0.4em;
+  text-align: center;
+}
+
+div.inHole {
+  font-size: 1.1em;
+  text-align: center;
+}
+
+div.arrowsDiv{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+
+div.arrowsDiv > * {
+  padding: 35px;
+  color: white;
+}
+
+div.back{
+  background-color: grey;
+  display: inline-block;
+}
+
+div.next{
+  background-color: blue;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+}
+
+div.add {
+  display: inline-block;
+  background-color: red;
+  border-radius: 50%;
+  padding: 20px;
+  transform: translateX(25%);
 }
