@@ -18,7 +18,7 @@ ul.playerSelectorList > button {
 }
 
 ul.playerSelectorList > * {
-  font-size: 3em;
+  font-size: 1em;
 }
 
 ul.playerSelectorList > li {
@@ -55,7 +55,7 @@ ul.playerSelectorList > li.present {
 #modalDiv {
   width: 50%;
   height: auto;
-  font-size: 4em;
+  font-size: 2em;
   position: fixed;
   padding: 15%;
   background-color: white;
@@ -89,7 +89,7 @@ ol {
 }
 
 #buttonDiv > button {
-  font-size: 3em;
+  font-size: 1em;
   margin: 5%;
 }
 
@@ -98,4 +98,27 @@ ol {
   bottom: 0;
   left: 0;
   right: 0;
+  border-top: 1px solid black;
+  background-color: white;
+}
+
+#headerDiv {
+  border-bottom: 1px solid black;
+  background-color: white;
+  z-index: 9999;
+  position: static;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-size: 0.3em;
+}
+
+#listDiv {
+  position: absolute;
+  top: 25%;
+  bottom: 30%;
+  left: 0;
+  right: 0;
+  font-size: 0.4em;
+  overflow-y: scroll;
 }

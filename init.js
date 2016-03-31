@@ -54,6 +54,7 @@ var newPlayerHandler = function () {
     $('.playerSelectorList').append($(this));
     $('.playerSelectorList').append(bottomButton);
     //setClickHandlers();
+    $(".submitPlayers").click(submitHandler);
     $(listItem).click(function () {
       $(this).toggleClass('present');
       $(this).toggleClass('absent');
@@ -61,12 +62,7 @@ var newPlayerHandler = function () {
   }
 }
 
-$("li.addPlayerItem").click(newPlayerHandler);
-
-$('.playerSelectorList').prepend($("<button class='submitPlayers top'>DONE</button>"));
-$('.playerSelectorList').append($("<button class='submitPlayers bottom'>DONE</button>"));
-
-$('.submitPlayers').click(function () {
+var submitHandler = function () {
   var presentArray = [];
   var absentArray = [];
   $('.playerItem.present').each(function(){
@@ -82,4 +78,11 @@ $('.submitPlayers').click(function () {
   localStorage.setItem('fullRoster' , almostClassy.roster)
   window.open('confirmation.html',"_self")
   localStorage.setItem('currentGame', true);
-})
+}
+
+$("li.addPlayerItem").click(newPlayerHandler);
+
+$('.playerSelectorList').prepend($("<button class='submitPlayers top'>DONE</button>"));
+$('.playerSelectorList').append($("<button class='submitPlayers bottom'>DONE</button>"));
+
+$('.submitPlayers').click(submitHandler)
